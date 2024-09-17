@@ -1,0 +1,14 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Grid lines -->
+  <line x1="0" y1="66.67" x2="200" y2="66.67" stroke="currentColor" stroke-width="5"/>
+  <line x1="0" y1="133.33" x2="200" y2="133.33" stroke="currentColor" stroke-width="5"/>
+  <line x1="66.67" y1="0" x2="66.67" y2="200" stroke="currentColor" stroke-width="5"/>
+  <line x1="133.33" y1="0" x2="133.33" y2="200" stroke="currentColor" stroke-width="5"/>
+  
+  <!-- X -->
+  <line x1="80" y1="20" x2="120" y2="60" stroke="currentColor" stroke-width="5"/>
+  <line x1="120" y1="20" x2="80" y2="60" stroke="currentColor" stroke-width="5"/>
+  
+  <!-- O -->
+  <circle cx="166.67" cy="166.67" r="20" stroke="currentColor" stroke-width="5" fill="none"/>
+</svg>
