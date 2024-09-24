@@ -1,4 +1,7 @@
 const checkForSequence = (option1, option2, option3) => {
+    if(option1 === null || option2 === null || option3 === null){
+        return false;
+    }
     return option1 === option2 && option2 === option3;
 }
 
@@ -12,30 +15,37 @@ export const checkForWinner = (board) => {
     for (let i = 0; i < 9; i += 3) {
         if(checkForSequence(board[i], board[i + 1], board[i + 2])) {
             console.log("Row Winner");
-            return true; // Ensure this return exits the function
+            return [i, i + 1, i + 2]; // Ensure this return exits the function
         }
     }
 
     for (let i = 0; i < 3; i += 1) {
         if(checkForSequence(board[i], board[i + 3], board[i + 6])) {
-            console.log("Row Winner");
             console.log("COLUMN winner");
-            return true; // Ensure this return exits the function
+            return [i, i + 3, i + 6]; // Ensure this return exits the function
         }
     }
 
     // diagnols 1
-    if (checkForSequence(board[0], board[4], board[8])) {
-        console.log("Diagonal Winner 1");
-        return true;
+    if(checkForSequence(board[0], board[4], board[8])) {
+        console.log("DIAGNOL Winner 1");
+        return [0, 4, 8];
     }
-    
+  
     // diagonals 2
     if (checkForSequence(board[2], board[4], board[6])) {
         console.log("Diagonal Winner 2");
-        return true;
+        return [2, 4, 6];
     }
+    // if (board[1] === board[4] && board[4] === board[6]) {
+    //     console.log("Diagonal Winner");
+    //     return true;
+    // }
+  // check if the game has drawn
+//   console.log(board)
+  if(board.includes(null)) {
+    return "draw"
+  }
 
-    // No winner found
     return false;
-}
+};
