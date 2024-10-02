@@ -4,7 +4,7 @@ import ModalTemplate from "../components/Modal/ModalTemplate";
 
 export const ModalContext = createContext({});
 
-export function ModalContextProvider({children}) {
+export const  ModalContextProvider = ({children}) => {
     const {modal, modalContent, handleModal} =useModal();
 
     return (

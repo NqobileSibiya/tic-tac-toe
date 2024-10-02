@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext} from "react";
 import useSound from "../hooks/useSound";
 
 export const SfxContext = createContext({});
@@ -21,7 +21,7 @@ export function SfxContextProvider({children}) {
     const clickSfx = useSound(clickedPath, options)
     const winSfx = useSound(winnerPath, {...options, timeout: 1000})
     const completedSfx = useSound(completedPath, {...options, timeout: 2000})
-  
+
     return (
         <SfxContext.Provider value={{ hoverSfx, clickSfx, winSfx , completedSfx}}>
             {children}

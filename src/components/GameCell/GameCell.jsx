@@ -33,17 +33,17 @@ function GameCell({ cellItem, index, isWinningCell }) {
 
   if (cellItem === "X") {
     return(
-    <CellStyle isWinningCell={isWinningCell ?? false}>
+    <CellStyle $isWinningCell={isWinningCell ?? false}>
       <IconX className="markedItem"/>
     </CellStyle> 
     );
   } else if (cellItem === "o") {
     return (
-      <CellStyle isWinningCell={ isWinningCell ?? false}>
+      <CellStyle $isWinningCell={ isWinningCell ?? false}>
         <IconO className="markedItem" />
       </CellStyle>
     );
-  }
+  } 
   return (
     <CellStyle onClick={cellClickHandler} onMouseEnter={() => hoverSfx()}>
       {game.turn === "x" ? (

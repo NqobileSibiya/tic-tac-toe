@@ -20,8 +20,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: ${(props) => 
-    props.primary ? props.theme.colors.primary : props.theme.colors.secondary};  /* Fallback to black if theme color is not defined */
+   color: ${(props) => (props.$primary ? props.theme.colors.primary : props.theme.colors.default)}; /* Fallback to black if theme color is not defined */
   font-size: 4rem;
   font-family: "Pacifico", cursive;  
   background-color: transparent;
@@ -32,7 +31,7 @@ export const Title = styled.h1`
 `;
 
 export const Subtitle = styled.h1`
- color: ${(props) => props.primary ? props.theme.colors.primary : props.theme.colors.secondary};  /* Fallback to black if theme color is not defined */
+  color: ${(props) => (props.$primary ? props.theme.colors.primary : props.theme.colors.default)};  /* Fallback to black if theme color is not defined */
   font-size: 1.5rem;
   font-weight: 200;
   background-color: transparent;
@@ -45,4 +44,4 @@ export const Text = styled.p`
 font-size: 1.2rem;
 background-color: transparent;
 padding: 10px;
-`
+`;

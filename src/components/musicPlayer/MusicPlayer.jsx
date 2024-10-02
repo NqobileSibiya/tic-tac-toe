@@ -45,7 +45,7 @@ function MusicPlayer() {
           clickSfx();
           setIsPlaying(false);
         }} 
-        onMouseEnter={hoverSfx}
+        onMouseEnter={() => hoverSfx()}
       />
     ) : (
       <PlayIcon 
@@ -53,7 +53,7 @@ function MusicPlayer() {
           clickSfx();
           setIsPlaying(true);
         }} 
-        onMouseEnter={hoverSfx}
+        onMouseEnter={() => hoverSfx()}
       />
     )}
     <NextIcon onClick={shuffleHandler} onMouseEnter={() => hoverSfx()} />

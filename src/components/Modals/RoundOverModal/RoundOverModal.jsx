@@ -15,9 +15,9 @@ function RoundOverModal() {
 
   const navigate = useNavigate();
   return (
-    <>
+    <div>
       <ModalHeader> 
-        <Title primary>
+        <Title $primary>
           {
             game.roundWinner.name
               ? `${game.roundWinner.name} wins Round`
@@ -27,9 +27,9 @@ function RoundOverModal() {
       </ModalHeader>
 
       <ModalBody>
-        <Subtitle primary>Choices will be switched now.</Subtitle>
-        <Subtitle primary>{game.player1.name}: {game.player1.score}</Subtitle>
-        <Subtitle primary>{game.player2.name}: {game.player2.score}</Subtitle>
+        <Subtitle $primary>Choice will be switched now.</Subtitle>
+        <Subtitle $primary>{game.player1.name}: {game.player1.score}</Subtitle>
+        <Subtitle $primary>{game.player2.name}: {game.player2.score}</Subtitle>
       </ModalBody>
 
       <ModalFooter>
@@ -47,27 +47,16 @@ function RoundOverModal() {
         <Button 
           color="#8437f9"
           onClick={() => {
-            clickSfx();
-            restartGame();
-            handleModal();
-            navigate("/");
-          }} onMouseEnter={() => hoverSfx()}
-        >
-          Continue
-        </Button>
-        
-        <Button 
-          color="#8437f9"
-          onClick={() => {
             completedSfx();
             restartGame();
+            handleModal();
             navigate("/");
           }}onMouseEnter={() => hoverSfx()}
         >
           Restart
         </Button>
       </ModalFooter>
-    </>
+    </div>
 );
 }
 

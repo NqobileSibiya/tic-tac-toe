@@ -10,7 +10,7 @@ function Home() {
 
   
   return (
-    <Container columnbased>
+    <Container>
         <Title>TicTacToe</Title>
         <Subtitle>Play with your friends, higher score wins!</Subtitle>
         <Button 

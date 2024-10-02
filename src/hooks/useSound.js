@@ -27,25 +27,7 @@ const useSound = (url, options) => {
             }
         }
     };
-
     return playSound;
 };
 
-// Example usage
-const TestComponent = () => {
-    const playSound = useSound("/path/to/sound.mp3", { volume: 0.5 });
-
-    const handleClick = () => {
-        console.log("Button clicked, playing sound...");
-        playSound();
-    };
-
-    return (
-        <div>
-            <h1>Sound Test</h1>
-            <button onClick={handleClick}>Play Sound</button>
-        </div>
-    );
-};
-
-export default TestComponent;
+export default useSound;

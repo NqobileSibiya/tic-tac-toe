@@ -6,7 +6,7 @@ import { Subtitle } from "../../styles/General.styled";
 function Player ({player, isPlayerActive}) {
   return (
    <PlayerWrapper>
-    <AvatarWrapper isPlayerActive={isPlayerActive ?? false}>
+     <AvatarWrapper $isPlayerActive={isPlayerActive ?? false}>
     <Avatar {...player.AvatarConfig} />
     </AvatarWrapper>
       <Subtitle>

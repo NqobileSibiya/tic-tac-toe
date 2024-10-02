@@ -33,8 +33,8 @@ export const GameContextProvider = (props) => {
             ...game,
             board: updatedBoard,
             turn: game.turn === "X" ? "O" : "X"
-        })
-    }
+        });
+    };
 
     const resetBoard = () => {
         setGame({
@@ -42,7 +42,7 @@ export const GameContextProvider = (props) => {
             board: [null, null, null, null, null, null, null, null, null],
             turn:"X",
             winningCombo: [],
-            roundWinner: "",
+             resetWinner: ''
         });
     };
 
@@ -67,7 +67,8 @@ export const GameContextProvider = (props) => {
         },
         turn: "X",
           roundWinner: "",
-        })
+          winningCombo: []
+        });
         
     }
     const toggleChoice = (choice) => choice === "X" ? "O" : "X";
@@ -100,7 +101,7 @@ export const GameContextProvider = (props) => {
                     score: prevGame.player2.score + 0.5,  // Update the score
                 },
                 roundWinner: "",
-                winningCombo: [0, 1, 2, 3, 4, 5] // Set the round winner as the winner's name
+                winningCombo: [0, 1, 2, 3, 4, 5, 6, 7, 8 ] // Set the round winner as the winner's name
             }));
         }else {
             setGame(prevGame => ({
@@ -110,7 +111,7 @@ export const GameContextProvider = (props) => {
                     score: prevGame[winner].score + 1,  // Update the score
                 },
                 roundWinner: prevGame[winner],  // Set the round winner as the winner's name
-                winningCombo: []
+                winningCombo: result
             })); 
         }
     };
@@ -134,10 +135,12 @@ return (
         updatedBoard,
         resetBoard,
         roundComplete,
+        SwitchTurn,
         restartGame
     }}
     >
         {props.children}
     </GameContext.Provider>
-)
-}
+);
+};
+
